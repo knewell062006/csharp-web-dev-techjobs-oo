@@ -12,6 +12,17 @@ namespace TechJobsOO
             Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
             Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
 
+            /* "\n" Id: 5 
+             *      Name: Ice cream tester
+             *      Employer: Data not avail
+             *      Location: Home
+             *      PositionType: Ux 
+             *      CoreCompetency: Tasting ability
+             * 
+             * 
+             * 
+             */
+
             List<Job> jobs = new List<Job>();
 
             jobs.Add(job1);

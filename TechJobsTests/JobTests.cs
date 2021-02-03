@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using TechJobsOO;
 
 namespace TechJobsTests
@@ -11,6 +12,7 @@ namespace TechJobsTests
         Job test3;
         Job testObj1;
         Job testObj2;
+        Job testObj3;
         
 
         [TestInitialize]
@@ -21,7 +23,7 @@ namespace TechJobsTests
             test3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             testObj1 = new Job();
             testObj2 = new Job();
-            
+            testObj3 = new Job("Waiter", new Employer(""), new Location("Tulsa"), new PositionType("Night Shift"), new CoreCompetency("presistence"));
         }
 
         [TestMethod]
@@ -44,9 +46,28 @@ namespace TechJobsTests
         {
             Assert.IsFalse(testObj1.Equals(testObj2));
         }
-       
         [TestMethod]
-        public void Tostring()
+        public void TestForNoEmptyFields()
+        {
+
+
+            string expected = "\n" + "Id: " + $"{testObj3.Id}" + "\n"
+                                + "Name: " + $"{testObj3.Name}" + "\n"
+                                + "EmployerName: " + $"Data not availible" + "\n"
+                                + "EmployerLocation: " + $"{ testObj3.EmployerLocation}" + "\n"
+                                + "JobType: " + $"{ testObj3.JobType}" + "\n"
+                                + "JobCoreCompetency: " + $"{ testObj3.JobCoreCompetency}" + "\n";
+
+            
+
+            Assert.AreEqual(expected, testObj3.ToString());
+
+           
+
+        }
+
+        [TestMethod]
+        public void TestAllFields()
         {
             string expected = "\n"+"Id: " + $"{test3.Id}" + "\n" 
                                 +"Name: "+ $"{test3.Name}"+"\n"

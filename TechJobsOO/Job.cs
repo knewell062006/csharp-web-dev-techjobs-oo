@@ -40,12 +40,33 @@ namespace TechJobsOO
         }
         public override string ToString()
         {
-            return "\n" + "Id: " + $"{this.Id}" + "\n"
-                                + "Name: " + $"{this.Name}" + "\n"
-                                + "EmployerName: " + $"{ this.EmployerName}" + "\n"
-                                + "EmployerLocation: " + $"{ this.EmployerLocation}" + "\n"
-                                + "JobType: " + $"{ this.JobType}" + "\n"
-                                + "JobCoreCompetency: " + $"{this.JobCoreCompetency}"+ "\n";
+            if (Name == "")
+            {
+                Name = "Data not availible";
+            }
+
+            if(EmployerName.Value == "" || EmployerName.Value == null)
+            {
+                EmployerName.Value = "Data not availible";
+            }
+
+            if(EmployerLocation.Value == "" || EmployerLocation.Value == null)
+            {
+                EmployerLocation.Value = "Data not availible";
+            }
+
+            if(JobType.Value == "" || JobType.Value == null)
+            {
+                JobType.Value = "Data not availible";
+            }
+
+            if (JobCoreCompetency.Value == "" || JobCoreCompetency.Value == null)
+            {
+                JobCoreCompetency.Value = "Data not availible";
+            }
+
+            return $"\nId:  {Id} \n Name:  {Name} \n EmployerName:  { EmployerName.Value} \n EmployerLocation: { EmployerLocation.Value} \n JobType:  { JobType.Value} \n JobCoreCompetency: {JobCoreCompetency.Value} \n ";
+            
         }
 
 
